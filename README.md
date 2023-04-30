@@ -23,4 +23,4 @@ n/a
 
 ## License
 
-This project is licensed under the terms of the MIT License
+This project is licensed under the terms of the [CC0 1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/legalcode)
