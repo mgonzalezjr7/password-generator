@@ -55,15 +55,26 @@ generateBtn.addEventListener("click", writePassword);
       return null;
     }
 
-    var passwordCombo = {
-      length: length,
-      specialCharactersAdded: specialCharactersAdded,
-      numericCharactersAdded: numericCharactersAdded,
-      uppercaseCharactersAdded: uppercaseCharactersAdded,
-      lowercaseCharactersAdded: lowercaseCharactersAdded,
-    };
+    var characters = [];
+    if (specialCharacters) {
+      characters = characters.concat(specialCharacters);
+    }
+    if (numericCharacters) {
+      characters = characters.concat(numericCharacters);
+    }
+    if (uppercaseCharacters) {
+      characters = characters.concat(uppercaseCharacters)
+    }
+    if (lowercaseCharacters) {
+      characters = characters.concat(lowercaseCharacters)
+    }
 
-    return passwordCombo;
+    var password = ``;
+    for (var i = 0; i<length; i++) {
+      password += getRandom(characters);
+    }
+    
+    return password;
 
     function getRandom(arr) {
       var randIndex = Math.floor(Math.random() * arr.length);
